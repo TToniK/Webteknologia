@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(156, 235, 110);
+  }
+}
+
+  h1{
+      text-align: center;
+      color: black;
+      margin-left: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+  }
+  p{
+      text-align: center;
+  }
+  li{
+      list-style-type: square;
+  }
+  ul{
+      background: #f17979;
+      padding: 20px;
+      text-align: center;
+  }
+  ul li{
+      background: #f3e8e8;
+      margin: 5px;
+      
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #770202;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #eecb05;
+  }
+  form{
+    text-align: center;
+}

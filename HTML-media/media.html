@@ -1,0 +1,33 @@
+<title>Nice pictures</title>
+<p>Nice pictures</p>
+<link rel="stylesheet" type="text/css" href="media.css">
+<img src="/images/1.jpg" id="image" style="height: 600px; width: 500px"/>
+<br />
+<div id="buttons">
+<input type="button" value="Start" onclick="slideShow()"/>
+<input type="button" value="Stop" onclick="stopSlide()"/>
+</div>
+<br />
+<div id="result"></div>
+<script type="text/javascript">
+var intervalId;
+
+function slideShow(){
+    intervalId = setInterval(changeImage, 500);
+}
+function stopSlide(){
+    clearInterval(intervalId);
+}
+    function changeImage(){
+        var imageSrc = document.getElementById("image").getAttribute("src");
+        var currentImage = imageSrc.substring(imageSrc.lastIndexOf("/") + 1, imageSrc.lastIndexOf("/") + 2);
+        if (currentImage == 3){
+            currentImage = 0;
+        }
+        var newImage = "/images/" +  (Number(currentImage) + 1) + ".jpg";
+
+        document.getElementById("image").setAttribute("src", newImage);
+        document.getElementById("result").innerHTML = newImage;
+    }
+
+</script>

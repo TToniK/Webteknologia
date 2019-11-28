@@ -1,0 +1,17 @@
+p {
+    text-align: center;
+}
+div{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+img{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+body{
+background-color: aquamarine;
+}

@@ -1,0 +1,28 @@
+header{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: xx-large;
+}
+body{
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(224, 125, 33);
+}
+html {
+    border-radius: 3px;
+    background-color:beige;
+}
+
+table{
+    border-collapse: collapse;
+    border: solid rgb(130, 156, 37);
+}
+
+th,td {
+    border: 1px solid rgb(153, 151, 41);
+    text-align: center;
+    padding: 8px;
+}

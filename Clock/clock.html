@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="clock.css">
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body onload="init()">
+<header>Clock</header>
+<div>
+    <p id="currentTime"></p>
+</div>
+Set Alarm:<input id="alarmtimeset" type="time">
+<button id="set" type="button" onclick="setAlarm()">Set</button>
+
+<div>
+    <canvas id="canvas" width="200" height="200"></canvas>
+</div>
+
+<button id="stop" type="button" onclick="pauseAudio()">Stop</button>
+
+<audio src="Alarm.wav" id="player"></audio>
+
+<script src="clock.js"></script>
+</body>
+</html>

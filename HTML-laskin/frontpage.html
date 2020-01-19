@@ -5,21 +5,19 @@
     <body>
         <h1>Simple Calculator</h1>
         <h1 id="answer"></h1>
-        Num 1 <input type="text" id="num1">
-        <br>
-        <br>
-        Num 2 <input type="text" id="num2">
-        <br>
-        <br>
+
         <button onclick="sum()">+</button>
+        <input type="number" id="firstNr" min="1" max="10">
         <button onclick="minus()">-</button>
+        <input type="number" id="secondNr" min="1" max="10">
+        
     </body>
         </div>
  
     <script>
         function sum(){
-            var field1=document.getElementById("num1").value;
-            var field2=document.getElementById("num2").value;
+            var field1=document.getElementById("firstNr").value;
+            var field2=document.getElementById("secondNr").value;
 
             var result=parseFloat(field1)+parseFloat(field2);
 
@@ -31,8 +29,8 @@
     </script>
     <script>
             function minus(){
-                var field1=document.getElementById("num1").value;
-                var field2=document.getElementById("num2").value;
+                var field1=document.getElementById("firstNr").value;
+                var field2=document.getElementById("secondNr").value;
     
                 var result=parseFloat(field1)-parseFloat(field2);
     

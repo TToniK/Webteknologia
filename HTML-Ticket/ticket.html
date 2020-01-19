@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="ticket.css">
+    <meta charset="UTF-8">
+    <title>MTK-Lippuautomaatti</title>
+</head>
+    <div class="Name">
+        <p id="fullName"></p>
+        <button onclick="myFunction()">Syötä nimi</button>
+    </div>
+        <script>
+            function myFunction() {
+              var person = prompt("Osta lippu henkilölle", "Oma Nimi");
+              if (person != null) {
+                document.getElementById("fullName").innerHTML =
+                "Olet ostamassa lippua henkilölle: " + person;
+              }
+            }
+        </script>
+    </div>
+            
+<div class="allContainer">
+    <div class="formContainer">
+        <div class="age-form">
+        <p>Lipun käyttäjän ikä.</p>
+            <input type="radio" id="age_rd1" class="age-input" name="age" value="7" onclick="calculatePrice()">7v. tai alle<br>
+            <input type="radio" id="age_rd2" class="age-input" name="age" value="15" onclick="calculatePrice()">7-15v.<br>
+            <input type="radio" id="age_rd3" class="age-input" name="age" value="64" checked onclick="calculatePrice()">16-64v.<br>
+            <input type="radio" id="age_rd4" class="age-input" name="age" value="65" onclick="calculatePrice()">65v. tai yli<br>
+        </div>
+
+        <div class="reduction-form">
+            <input type="radio" id="occupation_rd1" class="occupation-select" name="occupation" value="nothing" checked onclick="calculatePrice()">Ei kumpikaan<br>
+            <input type="radio" id="occupation_rd2" class="occupation-select" name="occupation" value="inService" onclick="calculatePrice()">Varusmies<br>
+            <input type="radio" id="occupation_rd3" class="occupation-select" name="occupation" value="student" onclick="calculatePrice()">Opsikelija<br>
+            <input type="checkbox" id="mtk_cb" class="checbox" name="mtk" value="mtk" onclick="calculatePrice()">Mtk-jäsen<br>
+        </div>
+
+    </div>
+    <div class="infoBox">
+        <p id="price">Lipun hinta:<span id="ticketPriceDisplay"></span>€</p>
+    <button type="button" onclick="submit()">Osta lippu</button>
+    <button type="button" onclick="showInfo()">Näytä alennukset</button>
+</div>
+</div>
+
+<script src="ticket.js"></script>
+</body>
+</html>

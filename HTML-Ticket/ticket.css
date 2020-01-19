@@ -1,0 +1,58 @@
+body{
+    position: absolute;
+    width: 98%;
+    height: 70%;
+    background-color: rgb(202, 196, 158);
+}
+html {
+    border-radius: 3px;
+    background-color: rgb(187, 175, 150);
+}
+
+
+.Name{
+    left: 30px;
+    font-size: 15px;
+    line-height: 0.6;
+    letter-spacing: 0em;
+    font-weight: 600;  
+}
+.infoBox{
+    margin-top: 20px;
+}
+.allContainer {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 60%;
+    position: absolute;
+    left: 30px;
+   }
+   
+
+.age-input{
+    margin-bottom: 10px;
+}
+
+.age-form{
+    margin-bottom: 30px;
+    outline: rgb(0, 0, 0) solid 3px;
+    outline-offset: 1px;
+    background-color: lightgray;
+}
+.reduction-form{
+    margin-bottom: 30px;
+    outline: rgb(0, 0, 0) solid 3px;
+    outline-offset: 1px;
+    background-color: lightgray;
+}
+
+.checbox{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.occupation-select{
+    margin-bottom: 15px;
+}

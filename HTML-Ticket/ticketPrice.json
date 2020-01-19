@@ -1,0 +1,35 @@
+{
+  "basePrice": 16,
+  "discountGroups": [
+    {
+      "id": 0,
+      "group": "0-6",
+      "discount": "100"
+    },
+    {
+      "id": 1,
+      "group": "7-15",
+      "discount": "50"
+    },
+    {
+      "id": 2,
+      "group": "65+",
+      "discount": "50"
+    },
+    {
+      "id": 3,
+      "group": "conscript",
+      "discount": "50"
+    },
+    {
+      "id": 4,
+      "group": "student",
+      "discount": "45"
+    },
+    {
+      "id": 5,
+      "group": "mtk",
+      "discount": "15"
+    }
+  ]
+}

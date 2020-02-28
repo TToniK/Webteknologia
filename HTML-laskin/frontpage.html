@@ -5,16 +5,21 @@
     <body>
         <h1>Simple Calculator</h1>
         <h1 id="answer"></h1>
-
-        <button onclick="sum()">+</button>
+        <select id="mathSel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+        <!-- <button onclick="sum()">+</button> -->
         <input type="number" id="firstNr" min="1" max="10">
-        <button onclick="minus()">-</button>
+        <!-- <button onclick="minus()">-</button> -->
         <input type="number" id="secondNr" min="1" max="10">
+        <button id="result" onclick="giveResult()">=</button>
         
     </body>
         </div>
+        <script src="calculator.js"></script>
  
-    <script>
+        
+    <!-- <script>
         function sum(){
             var field1=document.getElementById("firstNr").value;
             var field2=document.getElementById("secondNr").value;
@@ -39,5 +44,5 @@
                     document.getElementById("answer").innerHTML="The answer is "+result;
                 }
             }
-        </script>
+        </script> -->
 </html>

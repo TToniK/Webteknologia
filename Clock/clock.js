@@ -1,3 +1,7 @@
+var alarmHour;
+var alarmMin;
+var player;
+
 function clock() {
     var now = new Date();
     var ctx = document.getElementById('canvas').getContext('2d');
@@ -10,39 +14,47 @@ function clock() {
     ctx.fillStyle = 'white';
     ctx.lineWidth = 8;
     ctx.lineCap = 'round';
-  
+
     // Hour marks
     ctx.save();
     for (var i = 0; i < 12; i++) {
-      ctx.beginPath();
-      ctx.rotate(Math.PI / 6);
-      ctx.moveTo(100, 0);
-      ctx.lineTo(120, 0);
-      ctx.stroke();
+        ctx.beginPath();
+        ctx.rotate(Math.PI / 6);
+        ctx.moveTo(100, 0);
+        ctx.lineTo(120, 0);
+        ctx.stroke();
     }
     ctx.restore();
-  
+
     // Minute marks
     ctx.save();
     ctx.lineWidth = 5;
     for (i = 0; i < 60; i++) {
-      if (i % 5!= 0) {
-        ctx.beginPath();
-        ctx.moveTo(117, 0);
-        ctx.lineTo(120, 0);
-        ctx.stroke();
-      }
-      ctx.rotate(Math.PI / 30);
+        if (i % 5!= 0) {
+            ctx.beginPath();
+            ctx.moveTo(117, 0);
+            ctx.lineTo(120, 0);
+            ctx.stroke();
+        }
+        ctx.rotate(Math.PI / 30);
     }
     ctx.restore();
-   
+
     var sec = now.getSeconds();
     var min = now.getMinutes();
     var hr  = now.getHours();
+
+
+    if(alarmHour == hr && alarmMin == min){
+        playAudio();
+
+    }
+
     hr = hr >= 12 ? hr - 12 : hr;
-  
+
+
     ctx.fillStyle = 'black';
-  
+
     // write Hours
     ctx.save();
     ctx.rotate(hr * (Math.PI / 6) + (Math.PI / 360) * min + (Math.PI / 21600) *sec);
@@ -52,7 +64,7 @@ function clock() {
     ctx.lineTo(80, 0);
     ctx.stroke();
     ctx.restore();
-  
+
     // write Minutes
     ctx.save();
     ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
@@ -62,7 +74,7 @@ function clock() {
     ctx.lineTo(112, 0);
     ctx.stroke();
     ctx.restore();
-   
+
     // Write seconds
     ctx.save();
     ctx.rotate(sec * Math.PI / 30);
@@ -83,16 +95,43 @@ function clock() {
     ctx.arc(0, 0, 3, 0, Math.PI * 2, true);
     ctx.fill();
     ctx.restore();
-  
+
     ctx.beginPath();
     ctx.lineWidth = 14;
     ctx.strokeStyle = '#325FA2';
     ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
     ctx.stroke();
-  
+
     ctx.restore();
-  
+
     window.requestAnimationFrame(clock);
-  }
-  
-  window.requestAnimationFrame(clock);
+    time();
+}
+
+function time(){
+    var date = new Date();
+    var time = date.toLocaleTimeString();
+    document.getElementById("currentTime").innerHTML = time;
+}
+
+setInterval(time,1000);
+
+function init(){
+    window.requestAnimationFrame(clock);
+    player = document.getElementById("player");
+}
+
+function setAlarm() {
+    var alarm = document.getElementById("alarmtimeset").value;
+    alarmHour = alarm.substring(0,2);
+    alarmMin = alarm.substring(3,5);
+}
+
+function playAudio(){
+    player.play();
+}
+
+function pauseAudio(){
+    player.pause();
+    location.reload();
+}
